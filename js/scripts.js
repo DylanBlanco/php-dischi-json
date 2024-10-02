@@ -3,13 +3,14 @@ const { createApp } = Vue;
 createApp({
     data() {
         return {
-            discs: []
+            message: 'Ciao',
+            discs: [],
         };
     },
     methods: {
         getDisc() {
             axios
-                .get('http://localhost/esercizio47 - PHP Dischi JSON/php-dischi-json')
+                .get('http://localhost/esercizio47%20-%20PHP%20Dischi%20JSON/php-dischi-json/api.php')
                 .then(res => {
                     this.discs = res.data;
                 });
