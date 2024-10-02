@@ -1,6 +1,4 @@
-<?php
-    $columnsNumber = 4;
-?>
+
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -12,7 +10,7 @@
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     </head>
     <body>
-        
+
         <header class="py-4 mb-4">
             <div class="container">
                 <div class="row">
@@ -25,21 +23,39 @@
             </div>
         </header>
 
-        <main>
+        <main id="app">
             <div class="container">
                 <div class="row">
-                    <?php
-                        for ($i = 0; $i < $columnsNumber; $i++) {
-                    ?>
-                        <div class="col-12 col-sm-6 col-md-4 col-lg-3">
-                            Colonna <?php echo $i + 1; ?>
+                    <div v-for="disc in discs" class="col-12 col-sm-6 sol-md-4 col-lg-3">
+                        <div>
+                            <div>
+                                <img :src="disc.poster" alt="disc.title">
+                            </div>
+                            <h2>
+                                {{ disc.title }}
+                            </h2>
+                            <h4>
+                                {{ disc.author }}
+                            </h4>
+                            <h5>
+                                {{ disc.year }}
+                            </h5>
+                            <h6>
+                                {{ disc.genre }}
+                            </h6>
                         </div>
-                    <?php
-                        }
-                    ?>
+                    </div>
                 </div>
             </div>
         </main>
 
+        <!-- vue -->
+        <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+
+        <!-- axios -->
+        <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
+        <!-- js -->
+         <script src="js/scripts.js"></script>
     </body>
 </html>
